@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sheet1 - Exportsy</title>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+  <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    table {
+      border-collapse: collapse;
+      margin-top: 20px;
+      width: 100%;
+    }
+    th, td {
+      border: 1px solid #aaa;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #f0f0f0;
+    }
+  </style>
+  <link rel="stylesheet" href="style.css">
+  <script src="js/sheet1_exportsy.js"></script>
+</head>
+<body>
+  <div style="margin-bottom: 15px;">
+    <button onclick="location.href='sheet2_list.html'">📋 View Saved Tables</button>
+  </div>
+
+  <h2>📦 TOR Weekly Shipping List</h2>
+  <input type="file" id="excelFile" accept=".xlsx, .xls" />
+  <button onclick="importAndSave()">Import & Save</button>
+  <input type="text" id="searchInput" placeholder="Search Model or WorkWeek">
+  <button onclick="filterTable()">🔍 Search</button>
+  <button onclick="exportToExcel()">📤 Export</button>
+  <button onclick="saveMergedTable()">💾 Save</button>
+  <div id="tableContainer"></div>
+
+  <script src="js/sheet1_exportsy.js"></script>
+</body>
+</html>
